@@ -2,7 +2,7 @@ import pytest
 from list_utils import remove_duplicates
 
 def test_remove_duplicates():
-    # Test case 1: Basic functionality
+    # Test case 1: Numbers
     input_array1 = [1, 2, 3, 2, 4, 5, 1]
     expected_output1 = [1, 2, 3, 4, 5]
     result1 = remove_duplicates(input_array1)
@@ -23,13 +23,14 @@ def test_remove_duplicates():
     assert result3 == expected_output3, f"For input {input_array3}, expected {expected_output3}, but got {result3}"
     print(f"Test case 3 - Mixed: {input_array3}, Result: {result3}")
 
-    # Test case 3: Strings
+    # Test case 4: Strings
     input_array4 = ['apple', 'orange', 'banana', 'apple', 'grape', 'orange', 'kiwi', 'banana']
     expected_output4 = ['apple', 'orange', 'banana', 'grape', 'kiwi']
     result4 = remove_duplicates(input_array4)
     assert result4 == expected_output4, f"For input {input_array4}, expected {expected_output4}, but got {result4}"
     print(f"Test case 4 - Strings: {input_array4}, Result: {result4}")
 
+    # Test case 5: Unicode
     input_array5 = input_unicode_duplicates = ['😊', '🍣', '你好', 'عربي', 'こんにちは', '🍣', 'مرحبا', '🌏', '🎉', '日本語', '中文', '😄', '🍜', 'عربي', 'hello', 'عربي', 'world', '日本語', '😄', 'python']
     expected_output5 = ['😊', '🍣', '你好', 'عربي', 'こんにちは', 'مرحبا', '🌏', '🎉', '日本語', '中文', '😄', '🍜', 'hello', 'world', 'python']
     result5 = remove_duplicates(input_array5)
